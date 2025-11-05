@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { createBuyOrder } from "../../services/firebase";
-import { useNavigate } from "react-router-dom";
-import InputForm from "./InputForm";
-import "sweetalert2/src/sweetalert2.scss";
-import Swal from "sweetalert2/dist/sweetalert2.js";
+import React, { useState } from 'react';
+import { createBuyOrder } from '../../services/firebase';
+import { useNavigate } from 'react-router-dom';
+import InputForm from './InputForm';
+import 'sweetalert2/src/sweetalert2.scss';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 function UserForm({ cart, getTotalPrice }) {
   const navigate = useNavigate();
 
   const [userData, setUserData] = useState({
-    name: "",
-    email: "",
-    phone: "",
+    name: '',
+    email: '',
+    phone: '',
   });
 
   function onInputChange(evt) {
@@ -35,12 +35,12 @@ function UserForm({ cart, getTotalPrice }) {
 
     createBuyOrder(orderData).then((response) => {
       Swal.fire({
-        title: "Thanks! Your order number is...",
+        title: 'Thank you! Your order number is...',
         text: response,
-        icon: "success",
-        confirmButtonText: "Home",
+        icon: 'success',
+        confirmButtonText: 'Home',
       }).then((result) => {
-        navigate("/");
+        navigate('/');
       });
     });
   }

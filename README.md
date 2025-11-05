@@ -1,34 +1,27 @@
-# LearnIT (Coderhouse Ecommerce Project)
+# LearnIT (React + Firebase)
 
-## General info
+LearnIT is a fully responsive e-commerce web application for a fictional IT bookstore. It was built from scratch to demonstrate a modern frontend stack, state management, and backend integration.
 
-This project is a work in progress Ecommerce of IT books
+The entire UI is built with Material-UI (MUI).
 
-## Technologies
+## Key Features
 
-The project was created with:
+- **Dynamic Product Catalog:** Products are fetched asynchronously from a **Firebase (Firestore)** database.
+- **Client-Side Routing:** Uses **React Router** for seamless navigation between the homepage, categories, product details, and the cart.
+- **Live Search & Filtering:**
+  - A functional **search bar** in the Navbar that filters products by title or author.
+  - A **category menu** that filters the product list dynamically.
+- **Global State Management:** The shopping cart is built using the **React Context API**, allowing state to be managed globally across all components.
+- **Modern UI/UX:**
+  - A "Hide on Scroll" app bar for a better browsing experience on mobile.
+  - A clean, responsive card layout with fixed-height cards and text truncation ("ellipsis") to handle titles of varying lengths.
+  - A custom-themed footer that is "sticky" to the bottom of the viewport.
+- **Secure API Keys:** All Firebase API keys are stored securely in a `.env` file and are not exposed in the GitHub repository.
 
-- React
-- Materiaul UI
-- Sweet Alert 2
-- React Dom
+## Tech Stack
 
-### Create react App
-
-- To start the project you have to create the folder first and open CLI in the folder.
-- Next you have to do is start an app typing "npx create-react-app name-of-app" in the opened CLI. Once the app is created you have to move to the folder created with the name of your app typing "cd name-of-app" and then you could try start the app with "npm start"
-
-#### Example
-
-```
-npx create-react-app name-of-app
-cd name-of-app
-npm start
-```
-
-### Routes
-
-- The route "/" is the home page.
-- The route "/category/:categoryId" shows you the filtered products.
-- The route "/book/:itemID" shows a detailed information about the product, price, stock, add to cart button.
-- The route "/cart" shows you the cart.
+- **Frontend:** React.js
+- **UI Library:** Material-UI (MUI)
+- **Routing:** React Router
+- **State Management:** React Context
+- **Backend:** Firebase (Firestore Database)

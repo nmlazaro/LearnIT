@@ -1,29 +1,31 @@
-import React from "react";
-import ItemCard from "../ItemCard/ItemCard";
-import Flex from "../Flex/Flex";
+import React from 'react';
+import ItemCard from '../ItemCard/ItemCard';
+import { Box } from '@mui/material';
 
 function ItemList(props) {
   return (
-    <>
-      <Flex>
-        {props.booksList.map((book) => {
-          return (
-            <ItemCard
-              key={book.id}
-              id={book.id}
-              img={book.img}
-              title={book.title}
-              subtitle={book.subtitle}
-              editorial={book.editorial}
-              price={book.price}
-              author={book.author}
-              detail={book.detail}
-              stock={book.stock}
-            />
-          );
-        })}
-      </Flex>
-    </>
+    <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        padding: 3,
+        gap: 3,
+        maxWidth: '1300px',
+        margin: '0 auto',
+      }}
+    >
+      {props.booksList.map((book) => {
+        return (
+          <ItemCard
+            id={book.id}
+            img={book.img}
+            title={book.title}
+            author={book.author}
+          />
+        );
+      })}
+    </Box>
   );
 }
 
