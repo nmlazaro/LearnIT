@@ -7,6 +7,7 @@ import { CartContextProvider } from './context/cartContext';
 import Cart from './components/Cart/Cart';
 import Footer from './components/Footer/Footer';
 import HideOnScroll from './components/HideOnScroll';
+import OrderSuccessful from './components/OrderSuccessful/OrderSuccessful';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/book/:itemID" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/search" element={<ItemListContainer />} />
+            <Route path="/order/:orderId" element={<OrderSuccessful />} />
             <Route path="*" element={<h1>Error 404 Site not found</h1>} />
           </Routes>
           <Footer />

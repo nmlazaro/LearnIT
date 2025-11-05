@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react';
 
 const cartContext = createContext();
 
@@ -46,6 +46,24 @@ function CartContextProvider(props) {
     return total;
   }
 
+  const increaseQuantity = (id) => {
+    setCart((prevCart) =>
+      prevCart.map((book) =>
+        book.id === id ? { ...book, count: book.count + 1 } : book
+      )
+    );
+  };
+
+  const decreaseQuantity = (id) => {
+    setCart((prevCart) =>
+      prevCart.map((book) =>
+        book.id === id && book.count > 1
+          ? { ...book, count: book.count - 1 }
+          : book
+      )
+    );
+  };
+
   return (
     <>
       <cartContext.Provider
@@ -57,6 +75,8 @@ function CartContextProvider(props) {
           isInCart,
           getTotalPrice,
           resetCart,
+          increaseQuantity,
+          decreaseQuantity,
         }}
       >
         {props.children}
